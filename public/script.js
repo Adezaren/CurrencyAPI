@@ -1,6 +1,5 @@
 async function convertCurrency () {
     
-
     const amount = parseFloat(document.getElementById('amount').value);
     const targetCurrency = document.getElementById('currency').value;
     
@@ -25,9 +24,9 @@ async function fetchCurrencies() {
         currencySelect.innerHTML = '';
         
         data.currencies.forEach(currency => {
-            let option = document.createElement('option');
-            option.value = currency;
-            option.textContent = currency;
+            const option = document.createElement('option');
+            option.value = currency.symbol;
+            option.textContent = `${currency.symbol} - ${currency.name}`;
             currencySelect.appendChild(option);
         });
     
